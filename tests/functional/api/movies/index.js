@@ -50,6 +50,19 @@ describe("Movies endpoint", () => {
         });
     });
   });
+  describe("GET /api/users ", () => {
+    it("should return 2 users", (done) => {
+      request(api)
+        .get("/api/users")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .end((err, res) => {
+          expect(res.body).to.be.a("array");
+          expect(res.body.length).to.equal(2);
+          done();
+        });
+    });
+  });
 
   describe("GET /api/movies/:id", () => {
     describe("when the id is valid", () => {

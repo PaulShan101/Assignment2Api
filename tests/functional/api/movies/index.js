@@ -63,6 +63,21 @@ describe("Movies endpoint", () => {
         });
     });
   });
+  describe("when the user is invalid", () => {
+    it("should return the NOT found message", () => {
+      return request(api)
+        .get("/api/movies/10")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(404)
+        .expect({
+          status_code: 404,
+          message: "The resource you requested could not be found.",
+        });
+    });
+  });
+});
+
 
   describe("GET /api/movies/:id", () => {
     describe("when the id is valid", () => {
@@ -91,4 +106,4 @@ describe("Movies endpoint", () => {
       });
     });
   });
-});
+

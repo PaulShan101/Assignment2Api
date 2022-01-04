@@ -5,7 +5,7 @@ import Movie from "../../../../api/movies/movieModel";
 import api from "../../../../index";
 import movies from "../../../../seedData/movies";
 
-//new tests
+//new tests1
 const expect = chai.expect;
 let db;
 
@@ -34,6 +34,7 @@ describe("Movies endpoint", () => {
       console.error(`failed to Load user Data: ${err}`);
     }
   });
+
   afterEach(() => {
     api.close(); // Release PORT 8080
   });

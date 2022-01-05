@@ -46,7 +46,7 @@ deploy_staging:
   only:
     - develop
   stage: staging
-  before_script:
+before_script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl

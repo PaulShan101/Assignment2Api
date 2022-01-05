@@ -35,50 +35,50 @@ describe("Movies endpoint", () => {
     }
   });
 
-//   afterEach(() => {
-//     api.close(); // Release PORT 8080
-//   });
-//   describe("GET /api/movies ", () => {
-//     it("should return 20 movies and a status 200", (done) => {
-//       request(api)
-//         .get("/api/movies")
-//         .set("Accept", "application/json")
-//         .expect("Content-Type", /json/)
-//         .expect(200)
-//         .end((err, res) => {
-//           expect(res.body).to.be.a("array");
-//           expect(res.body.length).to.equal(20);
-//           done();
-//         });
-//     });
-//   });
-//   describe("GET /api/users ", () => {
-//     it("should return 2 users", (done) => {
-//       request(api)
-//         .get("/api/users")
-//         .set("Accept", "application/json")
-//         .expect("Content-Type", /json/)
-//         .end((err, res) => {
-//           expect(res.body).to.be.a("array");
-//           expect(res.body.length).to.equal(2);
-//           done();
-//         });
-//     });
-//   });
-//   describe("when the user is invalid", () => {
-//     it("should return the NOT found message", () => {
-//       return request(api)
-//         .get("/api/movies/10")
-//         .set("Accept", "application/json")
-//         .expect("Content-Type", /json/)
-//         .expect(404)
-//         .expect({
-//           status_code: 404,
-//           message: "The resource you requested could not be found.",
-//         });
-//     });
-//   });
-// });
+  afterEach(() => {
+    api.close(); // Release PORT 8080
+  });
+  describe("GET /api/movies ", () => {
+    it("should return 20 movies and a status 200", (done) => {
+      request(api)
+        .get("/api/movies")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body).to.be.a("array");
+          expect(res.body.length).to.equal(20);
+          done();
+        });
+    });
+  });
+  describe("GET /api/users ", () => {
+    it("should return 2 users", (done) => {
+      request(api)
+        .get("/api/users")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .end((err, res) => {
+          expect(res.body).to.be.a("array");
+          expect(res.body.length).to.equal(3);
+          done();
+        });
+    });
+  });
+  describe("when the user is invalid", () => {
+    it("should return the NOT found message", () => {
+      return request(api)
+        .get("/api/movies/10")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(404)
+        .expect({
+          status_code: 404,
+          message: "The resource you requested could not be found.",
+        });
+    });
+  });
+});
 
 
 //   describe("GET /api/movies/:id", () => {
@@ -107,5 +107,5 @@ describe("Movies endpoint", () => {
 //           });
 //       });
 //     });
-  });
+  
 

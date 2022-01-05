@@ -3,7 +3,8 @@ import { movies, movieReviews, movieDetails } from './moviesData';
 import uniqid from 'uniqid'
 import movieModel from './movieModel';
 import asyncHandler from 'express-async-handler';
-import { getUpcomingMovies } from '../movie-api';
+//import { getUpcomingMovies } from '../movie-api';
+import { getUpcomingMovies} from '../tmdb-api';
 
 
 

@@ -33,7 +33,11 @@ install_dependencies:
 Build_api:
   stage: build
   before_script:
-     - npm run clean
+    - npm run clean
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - gem install faraday -v 1.8.0
   script:
     - npm run build
 

@@ -27,86 +27,87 @@ describe("Movies endpoint", () => {
   });
 });
 
-//   beforeEach(async () => {
-//     try {
-//       await Movie.deleteMany();
-//       await Movie.collection.insertMany(movies);
-//     } catch (err) {
-//       console.error(`failed to Load user Data: ${err}`);
-//     }
-//   });
+  beforeEach(async () => {
+    try {
+      await Movie.deleteMany();
+      await Movie.collection.insertMany(movies);
+    } catch (err) {
+      console.error(`failed to Load user Data: ${err}`);
+    }
+  });
 
-//   afterEach(() => {
-//     api.close(); // Release PORT 8080
-//   });
-//   describe("GET /api/movies ", () => {
-//     it("should return 20 movies and a status 200", (done) => {
-//       request(api)
-//         .get("/api/movies")
-//         .set("Accept", "application/json")
-//         .expect("Content-Type", /json/)
-//         .expect(200)
-//         .end((err, res) => {
-//           expect(res.body).to.be.a("array");
-//           expect(res.body.length).to.equal(20);
-//           done();
-//         });
-//     });
-//   });
-//   describe("GET /api/users ", () => {
-//     it("should return 2 users", (done) => {
-//       request(api)
-//         .get("/api/users")
-//         .set("Accept", "application/json")
-//         .expect("Content-Type", /json/)
-//         .end((err, res) => {
-//           expect(res.body).to.be.a("array");
-//           expect(res.body.length).to.equal(3);
-//           done();
-//         });
-//     });
-//   });
-//   describe("when the user is invalid", () => {
-//     it("should return the NOT found message", () => {
-//       return request(api)
-//         .get("/api/movies/10")
-//         .set("Accept", "application/json")
-//         .expect("Content-Type", /json/)
-//         .expect(404)
-//         .expect({
-//           status_code: 404,
-//           message: "The resource you requested could not be found.",
-//         });
-//     });
-//   });
-// });
+  // afterEach(() => {
+  //   api.close(); // Release PORT 8080
+  // });
+  // describe("GET /api/movies ", () => {
+  //   it("should return 20 movies and a status 200", (done) => {
+  //     request(api)
+  //       .get("/api/movies")
+  //       .set("Accept", "application/json")
+  //       .expect("Content-Type", /json/)
+  //       .expect(200)
+  //       .end((err, res) => {
+  //         expect(res.body).to.be.a("object");
+  //         expect(res.body.length).to.equal(20);
+  //         done();
+  //       });
+  //   });
+  // });
+  describe("GET /api/users ", () => {
+    it("should return 2 users", (done) => {
+      request(api)
+        .get("/api/users")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .end((err, res) => {
+          expect(res.body).to.be.a("array");
+          expect(res.body.length).to.equal(2);
+          done();
+        });
+    });
+  });
+  // describe("when the user is invalid", () => {
+  //   it("should return the NOT found message", () => {
+  //     return request(api)
+  //       .get("/api/users/movies")
+  //       .set("Accept", "application/json")
+  //       .expect("Content-Type", /json/)
+  //       .expect(401)
+  //       .expect({
+  //         status_code: 401,
+  //         message: "The resource you requested could not be found.",
+  //       });
+  //   });
+  // });
 
 
-// //   describe("GET /api/movies/:id", () => {
-// //     describe("when the id is valid", () => {
-// //       it("should return the matching movie", () => {
-// //         return request(api)
-// //           .get(`/api/movies/${movies[0].id}`)
-// //           .set("Accept", "application/json")
-// //           .expect("Content-Type", /json/)
-// //           .expect(200)
-// //           .then((res) => {
-// //             expect(res.body).to.have.property("title", movies[0].title);
-// //           });
-// //       });
-// //     });
-// //     describe("when the id is invalid", () => {
-// //       it("should return the NOT found message", () => {
-// //         return request(api)
-// //           .get("/api/movies/9999")
-// //           .set("Accept", "application/json")
-// //           .expect("Content-Type", /json/)
-// //           .expect(404)
-// //           .expect({
-// //             status_code: 404,
-// //             message: "The resource you requested could not be found.",
-// //           });
-// //       });
-// //     });
+
+  // describe("GET /api/movies/:id", () => {
+  //   describe("when the id is valid", () => {
+  //     it("should return the matching movie", () => {
+  //       return request(api)
+  //         .get(`/api/movies/${movies[0].id}`)
+  //         .set("Accept", "application/json")
+  //         .expect("Content-Type", /json/)
+  //         .expect(200)
+  //         .then((res) => {
+  //           expect(res.body).to.have.property("title", movies[0].title);
+  //         });
+  //     });
+  //   });
+  //   describe("when the id is invalid", () => {
+  //     it("should return the NOT found message", () => {
+  //       return request(api)
+  //         .get("/api/movies/9999")
+  //         .set("Accept", "application/json")
+  //         .expect("Content-Type", /json/)
+  //         .expect(404)
+  //         .expect({
+  //           status_code: 404,
+  //           message: "The resource you requested could not be found.",
+  //         });
+  //     });
+  //   });
+  // });
   
 

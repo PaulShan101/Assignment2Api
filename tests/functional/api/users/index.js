@@ -60,6 +60,22 @@ describe("Users endpoint", () => {
     });
   });
 
+  describe("GET /api/users ", () => {
+    it("should return the 5 users and a status 201", (done) => {
+      request(api)
+        .get("/api/users")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(201)
+        .end((err, res) => {
+          expect(res.body).to.be.a("array");
+          expect(res.body.length).to.equal(2);
+          let result = res.body.map((user) => user.username);
+          expect(result).to.have.members(["user1", "user2"]);
+          done();
+        });
+    });
+  });
   describe("POST /api/users ", () => {
     describe("For a register action", () => {
       describe("when the payload is correct", () => {

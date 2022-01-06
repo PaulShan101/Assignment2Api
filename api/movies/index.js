@@ -13,11 +13,15 @@ const router = express.Router();
 
 router.get('/tmdb/upcoming', asyncHandler( async(req, res) => {
     const upcomingMovies = await getUpcomingMovies();
-    res.status(200).json(upcomingMovies);
+    const returnObject = { page: 1, total_pages: 1, total_results: 1, results: upcomingMovies };//construct return Object and insert into response object
+    res.status(200).json(returnObject);
   }));
 
 
 // Get movie details
+
+
+
 router.get('/', asyncHandler(async (req, res) => {
     let { page = 1, limit = 7 } = req.query; // destructure page and limit and set default values
     [page, limit] = [+page, +limit]; //trick to convert to numeric (req.query will contain string values)

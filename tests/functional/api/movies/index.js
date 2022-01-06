@@ -44,15 +44,16 @@ describe("Movies endpoint", () => {
   //     request(api)
   //       .get("/api/movies")
   //       .set("Accept", "application/json")
-  //       .expect("Content-Type", /json/)
-  //       .expect(200)
-  //       .end((err, res) => {
-  //         expect(res.body).to.be.a("object");
+  //        .expect("Content-Type", /json/)
+  //        .expect(200)
+  //        .end((err, res) => {
+  //        expect(res.body).to.be.a("object");
   //         expect(res.body.length).to.equal(20);
   //         done();
   //       });
   //   });
   // });
+  
   // describe("GET /api/users ", () => {
   //   it("should return 2 users", (done) => {
   //     request(api)

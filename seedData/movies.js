@@ -14,7 +14,7 @@ const movies = [
         "popularity": 2633.943,
         "poster_path": "/eLT8Cu357VOwBVTitkmlDEg32Fs.jpg",
         "release_date": "2020-11-20",
-        "title": "Jiu Jitsu",
+        "title": "Jiu Jitsu2",
         "video": false,
         "vote_average": 5.9,
         "vote_count": 111
